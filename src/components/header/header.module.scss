@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  min-height: 8vh;
+  min-height: 6vh;
   background-color: transparent;
 
   .main {
@@ -11,10 +11,12 @@
     justify-content: space-between;
     flex-direction: row;
     background-color: transparent;
+    z-index: 1;
 
     .logo {
       font-family: "Amatic SC";
       font-size: 36px;
+      color: white;
     }
   }
 }
