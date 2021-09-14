@@ -1,3 +1,23 @@
+import { TodayForecastType } from "../types";
+import sunny from "../icons/sunny.svg";
+import cloud_foggy from "../icons/cloud_foggy.svg";
+import cloud_snowflake from "../icons/cloud_snowflake.svg";
+import cloud from "../icons/cloud.svg";
+import cloudy_lightning from "../icons/cloudy_lightning.svg";
+import cloudy_moon from "../icons/cloudy_moon.svg";
+import cloudy_sunny from "../icons/cloudy_sunny.svg";
+import drop from "../icons/drop.svg";
+import fog from "../icons/fog.svg";
+import hot from "../icons/hot.svg";
+import lightning from "../icons/lightning.svg";
+import moon from "../icons/moon.svg";
+import night_raining from "../icons/night_raining.svg";
+import rain from "../icons/rain.svg";
+import raining_sun from "../icons/raining_sun.svg";
+import snow from "../icons/snow.svg";
+import snowflake from "../icons/snowflake.svg";
+import wind from "../icons/wind.svg";
+
 export const fiveDaysForecast = [
   {
     date: "8 Sep",
@@ -33,9 +53,9 @@ export const fiveDaysForecast = [
   },
 ];
 
-export const todayForecast = {
+export const todayForecast: TodayForecastType = {
   weekDay: "Tuesday",
-  data: " 7 Sep",
+  date: " 7 Sep",
   icon: 1,
   weatherText: "Sunny",
   currentTemp: { c: 25, f: 77 },
@@ -46,44 +66,44 @@ export const todayForecast = {
 };
 
 export const icons = {
-  1: "sunny",
-  2: "sunny",
-  3: "cloudy_sunny",
-  4: "cloudy_sunny",
-  5: "cloudy_sunny",
-  6: "cloud",
-  7: "cloud",
-  8: "cloud_foggy",
-  11: "fog",
-  12: "drop",
-  13: "raining_sun",
-  14: "raining_sun",
-  15: "cloudy_lightning",
-  16: "lightning",
-  17: "lightning",
-  18: "rain",
-  19: "snow",
-  20: "raining_sun",
-  21: "raining_sun",
-  22: "cloud_snowflake",
-  23: "cloud_snowflake",
-  24: "snowflake",
-  25: "snow",
-  26: "rain",
-  29: "snow",
-  30: "hot",
-  31: "snowflake",
-  32: "wind",
-  33: "moon",
-  34: "moon",
-  35: "cloudy_moon",
-  36: "cloudy_moon",
-  37: "fog",
-  38: "cloudy_moon",
-  39: "night_raining",
-  40: "night_raining",
-  41: "lightning",
-  42: "cloudy_lightning",
-  43: "snow",
-  44: "cloud_snowflake",
+  1: sunny,
+  2: sunny,
+  3: cloudy_sunny,
+  4: cloudy_sunny,
+  5: cloudy_sunny,
+  6: cloud,
+  7: cloud,
+  8: cloud_foggy,
+  11: fog,
+  12: drop,
+  13: raining_sun,
+  14: raining_sun,
+  15: cloudy_lightning,
+  16: lightning,
+  17: lightning,
+  18: rain,
+  19: snow,
+  20: raining_sun,
+  21: raining_sun,
+  22: cloud_snowflake,
+  23: cloud_snowflake,
+  24: snowflake,
+  25: snow,
+  26: rain,
+  29: snow,
+  30: hot,
+  31: snowflake,
+  32: wind,
+  33: moon,
+  34: moon,
+  35: cloudy_moon,
+  36: cloudy_moon,
+  37: fog,
+  38: cloudy_moon,
+  39: night_raining,
+  40: night_raining,
+  41: lightning,
+  42: cloudy_lightning,
+  43: snow,
+  44: cloud_snowflake,
 };
