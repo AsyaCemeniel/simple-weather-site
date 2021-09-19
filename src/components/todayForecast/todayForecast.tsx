@@ -32,7 +32,7 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
             <img src={currentIcon} alt="weather icon" />
           </div>
           <div className={styles.temperature}>
-            <span>
+            <span className={styles.current_temp}>
               {isMetric ? currentTemp.c + "°C" : currentTemp.f + "°F"}
             </span>
             <span>{minMaxTemp}</span>
@@ -40,15 +40,17 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
         </div>
         <div className={styles.second_column}>
           <div className={styles.day_info}>
-            <div>
-              <span>{weekDay}</span>
-              <span>{date}</span>
+            <div className={styles.date}>
+              <span>{weekDay} </span>
+              <span> {date}</span>
             </div>
-            <span>{weatherText}</span>
+            <span className={styles.weather}>{weatherText}</span>
           </div>
           <div className={styles.parameters}>
-            <span>{humidity}%</span>
-            <span>{isMetric ? wind.m : wind.i}</span>
+            <span>Humidity: {humidity}%</span>
+            <span className={styles.wind}>
+              Wind: {isMetric ? wind.m : wind.i}
+            </span>
           </div>
         </div>
       </div>
