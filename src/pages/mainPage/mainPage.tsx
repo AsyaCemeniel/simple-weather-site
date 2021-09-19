@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
+import { fiveDaysForecast } from "../../utils/data";
+import { ForecastType } from "../../types";
+import { DailyForecast } from "../../components/dailyForecast";
 
 export const MainPage = () => {
   const [isMetric, setIsMetric] = useState(true);
@@ -13,9 +16,18 @@ export const MainPage = () => {
         <div className={styles.button}>
           <button onClick={() => setIsMetric(!isMetric)}> °C / °F </button>
         </div>
-        <div className={styles.current_box}>
-          <span className={styles.todo}>Some weather forecast</span>
-          <TodayForecast isMetric={isMetric} />
+        <div className={styles.content}>
+          <div className={styles.current_box}>
+            <span className={styles.todo}>Some weather forecast</span>
+            <TodayForecast isMetric={isMetric} />
+          </div>
+          <div className={styles.week_box}>
+            {fiveDaysForecast.map((weather: ForecastType, index) => (
+              <div key={index} className={styles.weather_block}>
+                <DailyForecast weather={weather} isMetric={isMetric} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

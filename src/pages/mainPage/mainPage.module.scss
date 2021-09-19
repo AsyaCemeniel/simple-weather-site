@@ -1,6 +1,7 @@
 .container {
   display: flex;
   background-color: transparent;
+  height: 90vh;
 
   .circle {
     position: absolute;
@@ -33,26 +34,49 @@
     display: flex;
     flex-direction: column;
 
-    .todo {
-      font-family: "Galdeano";
-      font-size: 60px;
-
-      color: rgb(59, 59, 59);
-    }
-
     .button {
       display: flex;
       justify-content: flex-end;
+
+      button {
+        font-family: "Amatic SC";
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 30px;
+        padding: 10px;
+      }
     }
 
-    .current_box {
-      width: 95%;
-      margin: 0 auto;
+    .content {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
+      flex-direction: column;
       justify-content: space-between;
-      margin-top: 50px;
+      height: 100%;
+
+      .current_box {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        .todo {
+          font-family: "Amatic SC";
+          font-weight: 700;
+          font-size: 80px;
+
+          color: rgb(59, 59, 59);
+        }
+      }
+
+      .week_box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
     }
   }
 }

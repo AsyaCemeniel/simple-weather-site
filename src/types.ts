@@ -20,7 +20,7 @@ export type TodayForecastType = {
 export type ForecastType = {
   date: string;
   weekDay: string;
-  icon: number;
+  icon: IconType;
   maxTemp: TempType;
   minTemp: TempType;
   weatherText: string;

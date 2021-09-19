@@ -1,4 +1,4 @@
-import { TodayForecastType } from "../types";
+import { ForecastType, TodayForecastType } from "../types";
 import sunny from "../icons/sunny.svg";
 import cloud_foggy from "../icons/cloud_foggy.svg";
 import cloud_snowflake from "../icons/cloud_snowflake.svg";
@@ -18,7 +18,7 @@ import snow from "../icons/snow.svg";
 import snowflake from "../icons/snowflake.svg";
 import wind from "../icons/wind.svg";
 
-export const fiveDaysForecast = [
+export const fiveDaysForecast: ForecastType[] = [
   {
     date: "8 Sep",
     weekDay: "Wednesday",
@@ -33,7 +33,7 @@ export const fiveDaysForecast = [
     icon: 11,
     maxTemp: { c: 22, f: 71 },
     minTemp: { c: 16, f: 60 },
-    weatherText: "Intermittent clouds",
+    weatherText: "Foggy",
   },
   {
     date: "10 Sep",
@@ -49,7 +49,7 @@ export const fiveDaysForecast = [
     icon: 7,
     maxTemp: { c: 21, f: 69 },
     minTemp: { c: 13, f: 55 },
-    weatherText: "Intermittent clouds",
+    weatherText: "Cloudy",
   },
 ];
 
