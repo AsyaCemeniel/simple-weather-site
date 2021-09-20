@@ -47,9 +47,14 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
             <span className={styles.weather}>{weatherText}</span>
           </div>
           <div className={styles.parameters}>
-            <span>Humidity: {humidity}%</span>
+            <span>
+              {" "}
+              <span className={styles.text}>Humidity: </span>
+              {humidity}%
+            </span>
             <span className={styles.wind}>
-              Wind: {isMetric ? wind.m : wind.i}
+              <span className={styles.text}>Wind: </span>
+              {isMetric ? wind.m : wind.i}
             </span>
           </div>
         </div>
