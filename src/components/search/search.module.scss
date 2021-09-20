@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+
+  .main {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 400px;
+      height: 40px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 60px 10px 20px;
+      font-family: "Amatic SC";
+      font-size: 35px;
+    }
+
+    input:focus {
+      outline: none;
+      cursor: text;
+    }
+
+    img {
+      height: 45px;
+      position: absolute;
+      left: 88%;
+    }
+  }
+}

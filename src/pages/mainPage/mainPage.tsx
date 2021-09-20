@@ -4,6 +4,7 @@ import styles from "./mainPage.module.scss";
 import { fiveDaysForecast } from "../../utils/data";
 import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
+import { Search } from "../../components/search";
 
 export const MainPage = () => {
   const [isMetric, setIsMetric] = useState(true);
@@ -18,7 +19,10 @@ export const MainPage = () => {
         </div>
         <div className={styles.content}>
           <div className={styles.current_box}>
-            <span className={styles.todo}>Some weather forecast</span>
+            <div>
+              <Search />
+              <span className={styles.todo}>Some weather forecast</span>
+            </div>
             <TodayForecast isMetric={isMetric} />
           </div>
           <div className={styles.week_box}>
