@@ -10,8 +10,10 @@
     border-radius: 50%;
     width: 1300px;
     height: 1300px;
-    background-color: rgb(253, 227, 80);
-    box-shadow: 0px 0px 20px 20px rgb(253, 227, 80);
+    background-color: rgb(255, 234, 116);
+    box-shadow: 0px 0px 20px 20px rgb(255, 234, 116);
+    // background-color: rgb(253, 227, 80);
+    // box-shadow: 0px 0px 20px 20px rgb(253, 227, 80);
     // border: 9px solid rgb(243, 131, 40);
   }
 
@@ -23,7 +25,9 @@
     border-radius: 50%;
     width: 1325px;
     height: 1325px;
-    background-color: rgb(240, 180, 16);
+    background-color: rgb(255, 203, 59);
+    // background-color: rgb(240, 180, 16);
+
     // box-shadow: 0px 0px 20px 20px rgb(240, 180, 16);
   }
 
@@ -67,7 +71,7 @@
           font-weight: 700;
           font-size: 80px;
 
-          color: rgb(59, 59, 59);
+          color: rgb(255, 174, 0);
         }
       }
 
@@ -76,6 +80,10 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+
+        // .weather_block {
+        //   margin-bottom: 30px;
+        // }
       }
     }
   }
