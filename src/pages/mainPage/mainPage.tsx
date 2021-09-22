@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
-import { fiveDaysForecast } from "../../utils/data";
+import { fiveDaysForecast, options } from "../../utils/data";
 import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
 import { Search } from "../../components/search";
@@ -20,8 +20,7 @@ export const MainPage = () => {
         <div className={styles.content}>
           <div className={styles.current_box}>
             <div>
-              <Search />
-              <span className={styles.todo}>Some weather forecast</span>
+              <Search options={options} />
             </div>
             <TodayForecast isMetric={isMetric} />
           </div>
