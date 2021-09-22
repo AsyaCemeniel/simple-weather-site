@@ -1,4 +1,9 @@
-import { ForecastType, TodayForecastType } from "../types";
+import {
+  favoriteType,
+  ForecastType,
+  LocationType,
+  TodayForecastType,
+} from "../types";
 import sunny from "../icons/sunny.svg";
 import cloud_foggy from "../icons/cloud_foggy.svg";
 import cloud_snowflake from "../icons/cloud_snowflake.svg";
@@ -17,6 +22,12 @@ import raining_sun from "../icons/raining_sun.svg";
 import snow from "../icons/snow.svg";
 import snowflake from "../icons/snowflake.svg";
 import wind from "../icons/wind.svg";
+
+export const options: LocationType[] = [
+  { city: "London", country: "United Kingdom" },
+  { city: "Vladivostok", country: "Russia" },
+  { city: "Ramat Gan", country: "Israel" },
+];
 
 export const fiveDaysForecast: ForecastType[] = [
   {
@@ -64,6 +75,30 @@ export const todayForecast: TodayForecastType = {
   humidity: 57,
   wind: { m: "3.2 km/h", i: "5.4 mi/h" },
 };
+
+export const favoriteLocations: favoriteType[] = [
+  {
+    location: { city: "London", country: "United Kingdom" },
+    icon: 18,
+    maxTemp: { c: 21, f: 69 },
+    minTemp: { c: 13, f: 55 },
+    weatherText: "Rainy",
+  },
+  {
+    location: { city: "Vladivostok", country: "Russia" },
+    icon: 11,
+    maxTemp: { c: 21, f: 69 },
+    minTemp: { c: 19, f: 62 },
+    weatherText: "Foggy",
+  },
+  {
+    location: { city: "Ramat Gan", country: "Israel" },
+    icon: 1,
+    maxTemp: { c: 31, f: 93 },
+    minTemp: { c: 23, f: 72 },
+    weatherText: "Sunny",
+  },
+];
 
 export const icons = {
   1: sunny,

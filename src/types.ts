@@ -29,3 +29,16 @@ export type ForecastType = {
 type IconsType = typeof icons;
 
 type IconType = keyof IconsType;
+
+export type LocationType = {
+  city: string;
+  country: string;
+};
+
+export type favoriteType = {
+  location: LocationType;
+  icon: IconType;
+  maxTemp: TempType;
+  minTemp: TempType;
+  weatherText: string;
+};
