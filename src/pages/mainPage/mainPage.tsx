@@ -5,6 +5,7 @@ import { fiveDaysForecast, options } from "../../utils/data";
 import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
 import { Search } from "../../components/search";
+import { Star } from "../../components/star";
 
 export const MainPage = () => {
   const [isMetric, setIsMetric] = useState(true);
@@ -19,7 +20,8 @@ export const MainPage = () => {
         </div>
         <div className={styles.content}>
           <div className={styles.current_box}>
-            <div>
+            <div className={styles.search_box}>
+              <Star />
               <Search options={options} />
             </div>
             <TodayForecast isMetric={isMetric} />
