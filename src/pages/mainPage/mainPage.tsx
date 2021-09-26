@@ -6,23 +6,21 @@ import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
 import { Search } from "../../components/search";
 import { Star } from "../../components/star";
+import { MeasureButton } from "../../components/measureButton";
 
 export const MainPage = () => {
   const [isMetric, setIsMetric] = useState(true);
 
-  const buttonText = isMetric ? "F" : "C";
+  const handleMetricSwitch = () => {
+    setIsMetric((prevState) => !prevState);
+  };
 
   return (
     <section className={styles.container}>
       <div className={styles.circle}></div>
       <div className={styles.back_circle}></div>
       <div className={styles.main}>
-        <div className={styles.button}>
-          <button onClick={() => setIsMetric(!isMetric)}>
-            {" "}
-            <span>°</span> {buttonText}{" "}
-          </button>
-        </div>
+        <MeasureButton isMetric={isMetric} switcher={handleMetricSwitch} />
         <div className={styles.content}>
           <div className={styles.current_box}>
             <div className={styles.search_box}>
