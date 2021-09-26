@@ -16,7 +16,32 @@
     .logo {
       font-family: "Amatic SC";
       font-size: 36px;
-      color: white;
+      color: rgb(240, 160, 41);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .control {
+      display: flex;
+      width: 250px;
+      justify-content: space-between;
+
+      .favorites {
+        display: flex;
+        align-items: center;
+        font-family: "Amatic SC";
+        font-size: 36px;
+        font-weight: 700;
+
+        a {
+          text-decoration: none;
+          color: rgb(54, 54, 51);
+        }
+
+        a:hover {
+          color: rgb(214, 159, 8);
+        }
+      }
     }
   }
 }
