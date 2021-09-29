@@ -8,7 +8,7 @@
   }
 
   .full_star {
-    animation: shake-animation 4.72s ease;
+    animation: shake-animation 0.5s ease;
   }
 
   .empty_star {
@@ -25,23 +25,20 @@
   0% {
     transform: translate(0, 0);
   }
-  1.78571% {
+  17% {
     transform: translate(5px, 0);
   }
-  3.57143% {
+  35% {
     transform: translate(0, 0);
   }
-  5.35714% {
+  53% {
     transform: translate(5px, 0);
   }
-  7.14286% {
+  71% {
     transform: translate(0, 0);
   }
-  8.92857% {
+  89% {
     transform: translate(5px, 0);
-  }
-  10.71429% {
-    transform: translate(0, 0);
   }
   100% {
     transform: translate(0, 0);
