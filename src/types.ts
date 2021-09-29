@@ -38,6 +38,7 @@ export type LocationType = {
 export type favoriteType = {
   location: LocationType;
   icon: IconType;
+  currentTemp: TempType;
   maxTemp: TempType;
   minTemp: TempType;
   weatherText: string;
