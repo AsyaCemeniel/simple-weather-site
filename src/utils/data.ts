@@ -80,6 +80,7 @@ export const favoriteLocations: favoriteType[] = [
   {
     location: { city: "London", country: "United Kingdom" },
     icon: 18,
+    currentTemp: { c: 20, f: 67 },
     maxTemp: { c: 21, f: 69 },
     minTemp: { c: 13, f: 55 },
     weatherText: "Rainy",
@@ -87,6 +88,7 @@ export const favoriteLocations: favoriteType[] = [
   {
     location: { city: "Vladivostok", country: "Russia" },
     icon: 11,
+    currentTemp: { c: 21, f: 69 },
     maxTemp: { c: 21, f: 69 },
     minTemp: { c: 19, f: 62 },
     weatherText: "Foggy",
@@ -94,9 +96,18 @@ export const favoriteLocations: favoriteType[] = [
   {
     location: { city: "Ramat Gan", country: "Israel" },
     icon: 1,
+    currentTemp: { c: 29, f: 84 },
     maxTemp: { c: 31, f: 93 },
     minTemp: { c: 23, f: 72 },
     weatherText: "Sunny",
+  },
+  {
+    location: { city: "Winnipeg", country: "Canada" },
+    icon: 33,
+    currentTemp: { c: 20, f: 69 },
+    maxTemp: { c: 29, f: 84 },
+    minTemp: { c: 13, f: 56 },
+    weatherText: "Clear",
   },
 ];
 
@@ -142,3 +153,13 @@ export const icons = {
   43: snow,
   44: cloud_snowflake,
 };
+
+const day = new Date("2021-09-29T03:23:00-05:00");
+
+console.log(
+  day.toLocaleString("en-US", {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+  })
+);
