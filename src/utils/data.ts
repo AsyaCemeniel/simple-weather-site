@@ -24,9 +24,9 @@ import snowflake from "../icons/snowflake.svg";
 import wind from "../icons/wind.svg";
 
 export const options: LocationType[] = [
-  { city: "London", country: "United Kingdom" },
-  { city: "Vladivostok", country: "Russia" },
-  { city: "Ramat Gan", country: "Israel" },
+  { key: "328328", city: "London", country: "United Kingdom" },
+  { key: "294927", city: "Vladivostok", country: "Russia" },
+  { key: "215849", city: "Ramat Gan", country: "Israel" },
 ];
 
 export const fiveDaysForecast: ForecastType[] = [
@@ -78,7 +78,7 @@ export const todayForecast: TodayForecastType = {
 
 export const favoriteLocations: favoriteType[] = [
   {
-    location: { city: "London", country: "United Kingdom" },
+    location: { key: "328328", city: "London", country: "United Kingdom" },
     icon: 18,
     currentTemp: { c: 20, f: 67 },
     maxTemp: { c: 21, f: 69 },
@@ -86,7 +86,7 @@ export const favoriteLocations: favoriteType[] = [
     weatherText: "Rainy",
   },
   {
-    location: { city: "Vladivostok", country: "Russia" },
+    location: { key: "294927", city: "Vladivostok", country: "Russia" },
     icon: 11,
     currentTemp: { c: 21, f: 69 },
     maxTemp: { c: 21, f: 69 },
@@ -94,7 +94,7 @@ export const favoriteLocations: favoriteType[] = [
     weatherText: "Foggy",
   },
   {
-    location: { city: "Ramat Gan", country: "Israel" },
+    location: { key: "215849", city: "Ramat Gan", country: "Israel" },
     icon: 1,
     currentTemp: { c: 29, f: 84 },
     maxTemp: { c: 31, f: 93 },
@@ -102,7 +102,7 @@ export const favoriteLocations: favoriteType[] = [
     weatherText: "Sunny",
   },
   {
-    location: { city: "Winnipeg", country: "Canada" },
+    location: { key: "48989", city: "Winnipeg", country: "Canada" },
     icon: 33,
     currentTemp: { c: 20, f: 69 },
     maxTemp: { c: 29, f: 84 },

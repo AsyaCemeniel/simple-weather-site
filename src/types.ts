@@ -31,6 +31,7 @@ type IconsType = typeof icons;
 type IconType = keyof IconsType;
 
 export type LocationType = {
+  key: string;
   city: string;
   country: string;
 };

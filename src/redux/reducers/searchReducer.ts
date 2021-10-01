@@ -1,15 +1,15 @@
 import { LocationType } from "../../types";
 
 type SearchState = {
-  searchList: LocationType[] | null;
-  searchListRequest: boolean;
-  searchListFailure: boolean;
+  optionsList: LocationType[] | null;
+  optionsListRequest: boolean;
+  optionsListFailure: boolean;
 };
 
 const initialState: SearchState = {
-  searchList: null,
-  searchListRequest: false,
-  searchListFailure: false,
+  optionsList: null,
+  optionsListRequest: false,
+  optionsListFailure: false,
 };
 
 export const SearchReducer = (state = initialState): SearchState => {
