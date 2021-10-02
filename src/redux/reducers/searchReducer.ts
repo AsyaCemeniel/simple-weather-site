@@ -1,4 +1,10 @@
 import { LocationType } from "../../types";
+import {
+  GET_OPTIONS_LIST_FAILURE,
+  GET_OPTIONS_LIST_REQUEST,
+  GET_OPTIONS_LIST_SUCCESS,
+  SearchActions,
+} from "../actions/searchActions";
 
 type SearchState = {
   optionsList: LocationType[] | null;
@@ -12,6 +18,29 @@ const initialState: SearchState = {
   optionsListFailure: false,
 };
 
-export const SearchReducer = (state = initialState): SearchState => {
-  return state;
+export const SearchReducer = (
+  state = initialState,
+  action: SearchActions
+): SearchState => {
+  switch (action.type) {
+    case GET_OPTIONS_LIST_REQUEST:
+      return {
+        ...state,
+        optionsListRequest: true,
+      };
+    case GET_OPTIONS_LIST_SUCCESS:
+      return {
+        ...state,
+        optionsListRequest: false,
+        optionsList: action.payload,
+      };
+    case GET_OPTIONS_LIST_FAILURE:
+      return {
+        ...state,
+        optionsListRequest: false,
+        optionsListFailure: true,
+      };
+    default:
+      return state;
+  }
 };
