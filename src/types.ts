@@ -1,4 +1,24 @@
 import { icons } from "./utils/data";
+import { ThunkAction } from "redux-thunk";
+import { Action, ActionCreator } from "redux";
+import { store } from "./redux/store";
+import { MainActions } from "./redux/actions/mainActions";
+import { FavoritesActions } from "./redux/actions/favoritesActions";
+import { ParametersActions } from "./redux/actions/parametersActions";
+import { SearchActions } from "./redux/actions/searchActions";
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+type AppActions =
+  | MainActions
+  | FavoritesActions
+  | ParametersActions
+  | SearchActions;
+
+export type AppThunk<ReturnType = void> = ActionCreator<
+  ThunkAction<ReturnType, Action, RootState, AppActions>
+>;
 
 export type TempType = {
   c: number;
