@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "../../hooks";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
-import { fiveDaysForecast, options } from "../../utils/data";
+import { options } from "../../utils/data";
 import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
 import { Search } from "../../components/search";
 import { Star } from "../../components/star";
 import { MeasureButton } from "../../components/measureButton";
+import {
+  getCurrentForecast,
+  getWeekForecast,
+} from "../../redux/actions/mainActions";
 
 export const MainPage = () => {
   const [isMetric, setIsMetric] = useState(true);
+  const dispatch = useDispatch();
+
+  const { currentLocationKey, weekForecast } = useSelector(
+    (store) => store.MainReducer
+  );
+
+  useEffect(() => {
+    dispatch(getCurrentForecast(currentLocationKey));
+    dispatch(getWeekForecast(currentLocationKey));
+  }, [currentLocationKey, dispatch]);
 
   const handleMetricSwitch = () => {
     setIsMetric((prevState) => !prevState);
@@ -30,11 +45,12 @@ export const MainPage = () => {
             <TodayForecast isMetric={isMetric} />
           </div>
           <div className={styles.week_box}>
-            {fiveDaysForecast.map((weather: ForecastType, index) => (
-              <div key={index} className={styles.weather_block}>
-                <DailyForecast weather={weather} isMetric={isMetric} />
-              </div>
-            ))}
+            {weekForecast &&
+              weekForecast.map((weather: ForecastType, index) => (
+                <div key={index} className={styles.weather_block}>
+                  <DailyForecast weather={weather} isMetric={isMetric} />
+                </div>
+              ))}
           </div>
         </div>
       </div>

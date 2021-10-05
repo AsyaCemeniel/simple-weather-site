@@ -1,28 +1,21 @@
 import React, { FC } from "react";
+import { useSelector } from "../../hooks";
 import styles from "./todayForecast.module.scss";
-import { todayForecast, icons } from "../../utils/data";
+import { icons } from "../../utils/data";
 
 type PropType = {
   isMetric: boolean;
 };
 
 export const TodayForecast: FC<PropType> = ({ isMetric }) => {
-  const {
-    weekDay,
-    date,
-    icon,
-    weatherText,
-    currentTemp,
-    maxTemp,
-    minTemp,
-    humidity,
-    wind,
-  } = todayForecast;
+  const todayForecast = useSelector(
+    (store) => store.MainReducer.currentForecast
+  );
 
-  const currentIcon = icons[icon];
+  const currentIcon = icons[todayForecast?.icon || "30"];
   const minMaxTemp = isMetric
-    ? maxTemp.c + "°C / " + minTemp.c + "°C"
-    : maxTemp.f + "°F / " + minTemp.f + "°F";
+    ? todayForecast?.maxTemp.c + "°C / " + todayForecast?.minTemp.c + "°C"
+    : todayForecast?.maxTemp.f + "°F / " + todayForecast?.minTemp.f + "°F";
 
   return (
     <div className={styles.container}>
@@ -33,7 +26,9 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
           </div>
           <div className={styles.temperature}>
             <span className={styles.current_temp}>
-              {isMetric ? currentTemp.c + "°C" : currentTemp.f + "°F"}
+              {isMetric
+                ? todayForecast?.currentTemp.c + "°C"
+                : todayForecast?.currentTemp.f + "°F"}
             </span>
             <span>{minMaxTemp}</span>
           </div>
@@ -41,20 +36,20 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
         <div className={styles.second_column}>
           <div className={styles.day_info}>
             <div className={styles.date}>
-              <span>{weekDay} </span>
-              <span> {date}</span>
+              <span>{todayForecast?.weekDay} </span>
+              <span> {todayForecast?.date}</span>
             </div>
-            <span className={styles.weather}>{weatherText}</span>
+            <span className={styles.weather}>{todayForecast?.weatherText}</span>
           </div>
           <div className={styles.parameters}>
             <span>
               {" "}
               <span className={styles.text}>Humidity: </span>
-              {humidity}%
+              {todayForecast?.humidity}%
             </span>
             <span className={styles.wind}>
               <span className={styles.text}>Wind: </span>
-              {isMetric ? wind.m : wind.i}
+              {isMetric ? todayForecast?.wind.m : todayForecast?.wind.i}
             </span>
           </div>
         </div>
