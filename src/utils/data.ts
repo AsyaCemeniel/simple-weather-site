@@ -153,13 +153,3 @@ export const icons = {
   43: snow,
   44: cloud_snowflake,
 };
-
-const day = new Date("2021-09-29T03:23:00-05:00");
-
-console.log(
-  day.toLocaleString("en-US", {
-    weekday: "long",
-    day: "numeric",
-    month: "short",
-  })
-);
