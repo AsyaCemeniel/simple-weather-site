@@ -1,5 +1,6 @@
 import { LocationType } from "../../types";
 import {
+  DELETE_OPTIONS_LIST,
   GET_OPTIONS_LIST_FAILURE,
   GET_OPTIONS_LIST_REQUEST,
   GET_OPTIONS_LIST_SUCCESS,
@@ -39,6 +40,11 @@ export const SearchReducer = (
         ...state,
         optionsListRequest: false,
         optionsListFailure: true,
+      };
+    case DELETE_OPTIONS_LIST:
+      return {
+        ...state,
+        optionsList: null,
       };
     default:
       return state;

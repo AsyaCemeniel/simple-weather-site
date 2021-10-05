@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "../../hooks";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
-import { options } from "../../utils/data";
 import { ForecastType } from "../../types";
 import { DailyForecast } from "../../components/dailyForecast";
 import { Search } from "../../components/search";
@@ -20,6 +19,7 @@ export const MainPage = () => {
   const { currentLocationKey, weekForecast } = useSelector(
     (store) => store.MainReducer
   );
+  const options = useSelector((store) => store.SearchReducer.optionsList);
 
   useEffect(() => {
     dispatch(getCurrentForecast(currentLocationKey));

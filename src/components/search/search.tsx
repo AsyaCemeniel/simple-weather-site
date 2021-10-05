@@ -1,19 +1,44 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styles from "./search.module.scss";
 import blueSearch from "../../icons/blue_search.svg";
 import { LocationType } from "../../types";
+import { useDebounce, useDispatch } from "../../hooks";
+import { SET_LOCATION_KEY } from "../../redux/actions/mainActions";
+import {
+  DELETE_OPTIONS_LIST,
+  getOptionsList,
+} from "../../redux/actions/searchActions";
 
 type PropsType = {
-  options: LocationType[];
+  options: LocationType[] | null;
 };
 
 export const Search: FC<PropsType> = ({ options }) => {
-  const [currentLocation, setLocation] = useState("London");
+  const [currentLocation, setLocation] = useState("");
   const [display, setDisplay] = useState(false);
+  const [locationName, setName] = useState("London");
+  const searchValue = useDebounce(currentLocation);
 
-  const HandelClick = (city: string) => {
-    setLocation(city);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (searchValue !== "") {
+      dispatch(getOptionsList(searchValue));
+    }
+  }, [searchValue, dispatch]);
+
+  const HandelClick = (city: string, key: string) => {
+    setName(city);
+    setLocation("");
     setDisplay(false);
+
+    dispatch({
+      type: SET_LOCATION_KEY,
+      payload: key,
+    });
+    dispatch({
+      type: DELETE_OPTIONS_LIST,
+    });
   };
 
   return (
@@ -33,7 +58,7 @@ export const Search: FC<PropsType> = ({ options }) => {
                 <div
                   key={index}
                   className={styles.option}
-                  onClick={() => HandelClick(location.city)}
+                  onClick={() => HandelClick(location.city, location.key)}
                 >
                   <span className={styles.city}>{location.city}</span>
                   <span className={styles.country}>{location.country}</span>
@@ -43,7 +68,7 @@ export const Search: FC<PropsType> = ({ options }) => {
         )}
       </div>
       <div className={styles.current_location}>
-        <span>{currentLocation}</span>
+        <span>{locationName}</span>
       </div>
     </div>
   );
