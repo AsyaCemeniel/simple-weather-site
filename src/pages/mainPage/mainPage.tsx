@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "../../hooks";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
@@ -13,29 +13,27 @@ import {
 } from "../../redux/actions/mainActions";
 
 export const MainPage = () => {
-  const [isMetric, setIsMetric] = useState(true);
   const dispatch = useDispatch();
 
   const { currentLocationKey, weekForecast } = useSelector(
     (store) => store.MainReducer
   );
+  const measure = useSelector((store) => store.ParametersReducer.measure);
   const options = useSelector((store) => store.SearchReducer.optionsList);
+
+  const isMetric = measure === "metric";
 
   useEffect(() => {
     dispatch(getCurrentForecast(currentLocationKey));
     dispatch(getWeekForecast(currentLocationKey));
   }, [currentLocationKey, dispatch]);
 
-  const handleMetricSwitch = () => {
-    setIsMetric((prevState) => !prevState);
-  };
-
   return (
     <section className={styles.container}>
       <div className={styles.circle}></div>
       <div className={styles.back_circle}></div>
       <div className={styles.main}>
-        <MeasureButton isMetric={isMetric} switcher={handleMetricSwitch} />
+        <MeasureButton />
         <div className={styles.content}>
           <div className={styles.current_box}>
             <div className={styles.search_box}>

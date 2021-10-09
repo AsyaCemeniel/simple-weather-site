@@ -8,7 +8,7 @@ export interface ISetTheme {
 
 export interface ISetMeasure {
   readonly type: typeof SET_MEASURE;
-  payload: boolean;
+  payload: "metric" | "imperial";
 }
 
 export type ParametersActions = ISetTheme | ISetMeasure;

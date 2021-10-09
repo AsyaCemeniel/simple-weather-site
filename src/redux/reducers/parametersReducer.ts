@@ -6,12 +6,12 @@ import {
 
 type ParametersState = {
   theme: "dark" | "light";
-  measure: boolean;
+  measure: "metric" | "imperial";
 };
 
 const initialState: ParametersState = {
   theme: "light",
-  measure: true,
+  measure: "metric",
 };
 
 export const ParametersReducer = (

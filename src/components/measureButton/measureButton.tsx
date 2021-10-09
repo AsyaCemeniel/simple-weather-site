@@ -1,12 +1,36 @@
-import React, { FC } from "react";
+import React, { useEffect } from "react";
+import {
+  useSelector,
+  useDispatch,
+  useStateWithLocalStorage,
+} from "../../hooks";
+import { SET_MEASURE } from "../../redux/actions/parametersActions";
 import styles from "./measureButton.module.scss";
 
-type PropsType = {
-  isMetric: boolean;
-  switcher: () => void;
-};
+export const MeasureButton = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useStateWithLocalStorage("measure");
 
-export const MeasureButton: FC<PropsType> = ({ isMetric, switcher }) => {
+  const measure = useSelector((store) => store.ParametersReducer.measure);
+  const isMetric = measure === "metric";
+
+  useEffect(() => {
+    if (value) {
+      dispatch({
+        type: SET_MEASURE,
+        payload: value,
+      });
+    }
+  }, []);
+
+  const switcher = () => {
+    dispatch({
+      type: SET_MEASURE,
+      payload: isMetric ? "imperial" : "metric",
+    });
+    setValue(isMetric ? "imperial" : "metric");
+  };
+
   const buttonText = isMetric ? "F" : "C";
 
   return (

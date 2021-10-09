@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import {
   TypedUseSelectorHook,
   useDispatch as dispatchHook,
@@ -9,7 +9,9 @@ import { AppDispatch, AppThunk, RootState } from "./types";
 export const useDispatch = () => dispatchHook<AppDispatch | AppThunk>();
 export const useSelector: TypedUseSelectorHook<RootState> = selectorHook;
 
-export const useStateWithLocalStorage = (localStorageKey: string) => {
+export const useStateWithLocalStorage = (
+  localStorageKey: string
+): [string, Dispatch<SetStateAction<string>>] => {
   const [value, setValue] = useState(
     localStorage.getItem(localStorageKey) || ""
   );

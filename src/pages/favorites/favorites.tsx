@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./favorites.module.scss";
+import { useSelector } from "../../hooks";
 import { MeasureButton } from "../../components/measureButton";
 import { favoriteLocations } from "../../utils/data";
 import { favoriteType } from "../../types";
 import { FavoriteLocation } from "../../components/favoriteLocation";
 
 export const Favorites = () => {
-  const [isMetric, setIsMetric] = useState(true);
-
-  const handleMetricSwitch = () => {
-    setIsMetric((prevState) => !prevState);
-  };
+  const measure = useSelector((store) => store.ParametersReducer.measure);
+  const isMetric = measure === "metric";
 
   return (
     <div className={styles.container}>
       <div className={styles.main}>
-        <MeasureButton isMetric={isMetric} switcher={handleMetricSwitch} />
+        <MeasureButton />
         <div className={styles.favorites}>
           {favoriteLocations.map((location: favoriteType, index) => (
             <div className={styles.favorite} key={index}>
