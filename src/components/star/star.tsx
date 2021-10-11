@@ -1,12 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "../../hooks";
 import styles from "./star.module.scss";
 import star from "../../icons/star.svg";
+import { ADD_OR_REMOVE_FAVORITES } from "../../redux/actions/favoritesActions";
 
 export const Star = () => {
+  const dispatch = useDispatch();
   const [isActive, setActive] = useState(false);
 
+  const favorites = useSelector((store) => store.FavoritesReducer.favorites);
+  const currentLocation = useSelector(
+    (store) => store.MainReducer.currentLocation
+  );
+
+  const isFavorites = Boolean(
+    favorites.find((location) => {
+      return location.key === currentLocation.key;
+    })
+  );
+
+  useEffect(() => {
+    setActive(isFavorites);
+  }, [isFavorites]);
+
   const handelClick = () => {
-    setActive(!isActive);
+    setActive((prevState) => !prevState);
+    if (!isActive) {
+      const result = [...favorites, currentLocation];
+      console.log("IF result ", result);
+      dispatch({
+        type: ADD_OR_REMOVE_FAVORITES,
+        payload: result,
+      });
+    } else {
+      const result = favorites.filter(
+        (location) => location.key !== currentLocation.key
+      );
+      console.log("ELSE result ", result);
+      dispatch({
+        type: ADD_OR_REMOVE_FAVORITES,
+        payload: result,
+      });
+    }
   };
 
   return (
