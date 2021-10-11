@@ -12,10 +12,13 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
       padding: 100px 130px 30px 130px;
       .favorite {
         margin: 0 10px 20px 10px;
+      }
+
+      a {
+        text-decoration: none;
       }
     }
   }

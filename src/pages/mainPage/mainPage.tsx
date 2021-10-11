@@ -15,7 +15,7 @@ import {
 export const MainPage = () => {
   const dispatch = useDispatch();
 
-  const { currentLocationKey, weekForecast } = useSelector(
+  const { currentLocation, weekForecast } = useSelector(
     (store) => store.MainReducer
   );
   const measure = useSelector((store) => store.ParametersReducer.measure);
@@ -24,9 +24,9 @@ export const MainPage = () => {
   const isMetric = measure === "metric";
 
   useEffect(() => {
-    dispatch(getCurrentForecast(currentLocationKey));
-    dispatch(getWeekForecast(currentLocationKey));
-  }, [currentLocationKey, dispatch]);
+    dispatch(getCurrentForecast(currentLocation.key));
+    dispatch(getWeekForecast(currentLocation.key));
+  }, [currentLocation, dispatch]);
 
   return (
     <section className={styles.container}>

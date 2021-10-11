@@ -1,24 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./favorites.module.scss";
-import { useSelector } from "../../hooks";
+import { useSelector, useDispatch } from "../../hooks";
 import { MeasureButton } from "../../components/measureButton";
-import { favoriteLocations } from "../../utils/data";
-import { favoriteType } from "../../types";
+import { favoriteType, LocationType } from "../../types";
 import { FavoriteLocation } from "../../components/favoriteLocation";
+import {
+  CLEAR_FAVORITES_LIST,
+  getFavoriteForecast,
+} from "../../redux/actions/favoritesActions";
+import { SET_LOCATION } from "../../redux/actions/mainActions";
 
 export const Favorites = () => {
+  const dispatch = useDispatch();
   const measure = useSelector((store) => store.ParametersReducer.measure);
   const isMetric = measure === "metric";
+
+  const { favoritesList, favorites } = useSelector(
+    (store) => store.FavoritesReducer
+  );
+
+  console.log("FAVORITES - ", favoritesList);
+  useEffect(() => {
+    dispatch({
+      type: CLEAR_FAVORITES_LIST,
+    });
+
+    favorites.map((location) => {
+      dispatch(getFavoriteForecast(location));
+    });
+  }, [favorites]);
+
+  const handleClick = (location: LocationType) => {
+    dispatch({
+      type: SET_LOCATION,
+      payload: location,
+    });
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.main}>
         <MeasureButton />
         <div className={styles.favorites}>
-          {favoriteLocations.map((location: favoriteType, index) => (
-            <div className={styles.favorite} key={index}>
-              <FavoriteLocation favorite={location} isMetric={isMetric} />
-            </div>
+          {favoritesList.map((location: favoriteType, index) => (
+            <Link to="/simple-weather-site" key={index}>
+              <div
+                className={styles.favorite}
+                onClick={() => handleClick(location.location)}
+              >
+                <FavoriteLocation favorite={location} isMetric={isMetric} />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,5 +1,7 @@
-import { favoriteType } from "../../types";
+import { favoriteType, LocationType } from "../../types";
 import {
+  ADD_OR_REMOVE_FAVORITES,
+  CLEAR_FAVORITES_LIST,
   FavoritesActions,
   GET_FAVORITES_LIST_FAILURE,
   GET_FAVORITES_LIST_REQUEST,
@@ -7,13 +9,15 @@ import {
 } from "../actions/favoritesActions";
 
 type FavoritesState = {
-  favoritesList: favoriteType[] | null;
+  favorites: LocationType[] | [];
+  favoritesList: favoriteType[] | [];
   favoritesListRequest: boolean;
   favoritesListFailure: boolean;
 };
 
 const initialState: FavoritesState = {
-  favoritesList: null,
+  favorites: [],
+  favoritesList: [],
   favoritesListRequest: false,
   favoritesListFailure: false,
 };
@@ -32,13 +36,24 @@ export const FavoritesReducer = (
       return {
         ...state,
         favoritesListRequest: false,
-        favoritesList: action.payload,
+        favoritesList: [...state.favoritesList, action.payload],
       };
     case GET_FAVORITES_LIST_FAILURE:
       return {
         ...state,
         favoritesListRequest: false,
         favoritesListFailure: true,
+      };
+    case CLEAR_FAVORITES_LIST:
+      return {
+        ...state,
+        favoritesList: [],
+      };
+    case ADD_OR_REMOVE_FAVORITES:
+      return {
+        ...state,
+        favorites: action.payload,
+        favoritesList: [],
       };
     default:
       return state;
