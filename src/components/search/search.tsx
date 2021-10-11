@@ -2,8 +2,8 @@ import React, { FC, useEffect, useState } from "react";
 import styles from "./search.module.scss";
 import blueSearch from "../../icons/blue_search.svg";
 import { LocationType } from "../../types";
-import { useDebounce, useDispatch } from "../../hooks";
-import { SET_LOCATION_KEY } from "../../redux/actions/mainActions";
+import { useDebounce, useDispatch, useSelector } from "../../hooks";
+import { SET_LOCATION } from "../../redux/actions/mainActions";
 import {
   DELETE_OPTIONS_LIST,
   getOptionsList,
@@ -14,9 +14,13 @@ type PropsType = {
 };
 
 export const Search: FC<PropsType> = ({ options }) => {
+  const currentLocationName = useSelector(
+    (store) => store.MainReducer.currentLocation.city
+  );
+
   const [currentLocation, setLocation] = useState("");
   const [display, setDisplay] = useState(false);
-  const [locationName, setName] = useState("London");
+  const [locationName, setName] = useState(currentLocationName || "London");
   const searchValue = useDebounce(currentLocation);
 
   const dispatch = useDispatch();
@@ -27,14 +31,14 @@ export const Search: FC<PropsType> = ({ options }) => {
     }
   }, [searchValue, dispatch]);
 
-  const HandelClick = (city: string, key: string) => {
-    setName(city);
+  const HandelClick = (location: LocationType) => {
+    setName(location.city);
     setLocation("");
     setDisplay(false);
 
     dispatch({
-      type: SET_LOCATION_KEY,
-      payload: key,
+      type: SET_LOCATION,
+      payload: location,
     });
     dispatch({
       type: DELETE_OPTIONS_LIST,
@@ -58,7 +62,7 @@ export const Search: FC<PropsType> = ({ options }) => {
                 <div
                   key={index}
                   className={styles.option}
-                  onClick={() => HandelClick(location.city, location.key)}
+                  onClick={() => HandelClick(location)}
                 >
                   <span className={styles.city}>{location.city}</span>
                   <span className={styles.country}>{location.country}</span>
