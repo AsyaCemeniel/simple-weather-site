@@ -4,6 +4,7 @@ import {
   ForecastType,
   TodayForecastType,
   DailyResponseType,
+  LocationType,
 } from "../../types";
 import { celsiusToFahrenheit } from "../../utils";
 import { getCurrentWeather, getFiveDaysWeather } from "../../utils/api";
@@ -19,7 +20,7 @@ export const GET_WEEK_FORECAST_REQUEST = "GET_WEEK_FORECAST_REQUEST" as const;
 export const GET_WEEK_FORECAST_SUCCESS = "GET_WEEK_FORECAST_SUCCESS" as const;
 export const GET_WEEK_FORECAST_FAILURE = "GET_WEEK_FORECAST_FAILURE" as const;
 
-export const SET_LOCATION_KEY = "SET_LOCATION_KEY" as const;
+export const SET_LOCATION = "SET_LOCATION" as const;
 
 export interface IGetCurrentForecastRequest {
   readonly type: typeof GET_CURRENT_FORECAST_REQUEST;
@@ -48,8 +49,8 @@ export interface IGetWeekForecastFailure {
 }
 
 export interface ISetLocationKey {
-  readonly type: typeof SET_LOCATION_KEY;
-  payload: string;
+  readonly type: typeof SET_LOCATION;
+  payload: LocationType;
 }
 
 export type MainActions =

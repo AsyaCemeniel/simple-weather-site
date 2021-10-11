@@ -1,4 +1,4 @@
-import { ForecastType, TodayForecastType } from "../../types";
+import { ForecastType, LocationType, TodayForecastType } from "../../types";
 import {
   GET_CURRENT_FORECAST_FAILURE,
   GET_CURRENT_FORECAST_REQUEST,
@@ -7,11 +7,11 @@ import {
   GET_WEEK_FORECAST_REQUEST,
   GET_WEEK_FORECAST_SUCCESS,
   MainActions,
-  SET_LOCATION_KEY,
+  SET_LOCATION,
 } from "../actions/mainActions";
 
 type MainState = {
-  currentLocationKey: string;
+  currentLocation: LocationType;
   currentForecast: TodayForecastType | null;
   currentForecastRequest: boolean;
   currentForecastFailure: boolean;
@@ -21,7 +21,7 @@ type MainState = {
 };
 
 const initialState: MainState = {
-  currentLocationKey: "328328",
+  currentLocation: { key: "328328", city: "London", country: "United Kingdom" },
 
   currentForecast: null,
   currentForecastRequest: false,
@@ -71,10 +71,10 @@ export const MainReducer = (
         weekForecastRequest: false,
         weekForecastFailure: true,
       };
-    case SET_LOCATION_KEY:
+    case SET_LOCATION:
       return {
         ...state,
-        currentLocationKey: action.payload,
+        currentLocation: action.payload,
       };
     default:
       return state;
