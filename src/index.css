@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(248, 246, 223);
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Amatic SC", cursive, "Encode Sans Semi Condensed", "Galdeano", sans-serif;
@@ -15,4 +15,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.theme-light {
+  --background-color: rgb(248, 246, 223);
+  --circle-color: rgb(255, 234, 116);
+  --back_circle-color: rgb(255, 203, 59);
+  --link-favorites-color: rgb(54, 54, 51);
+  --cards-color: rgb(255, 255, 255, 0.5);
+  --cards-text-color: rgb(54, 54, 51);
+  --logo-color: rgb(240, 160, 41);
+}
+
+.theme-dark {
+  --background-color: rgb(4, 65, 129);
+  --circle-color: rgb(56, 91, 187);
+  --back_circle-color: rgb(5, 72, 145);
+  --link-favorites-color: rgb(248, 246, 223);
+  --cards-color: rgb(255, 255, 255, 0.3);
+  --cards-text-color: rgb(253, 253, 253);
+  --logo-color: rgb(160, 220, 255);
+}
+
+.color {
+  background-color: var(--background-color);
+  height: 100vh;
 }

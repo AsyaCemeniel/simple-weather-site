@@ -1,8 +1,7 @@
 .container {
   display: flex;
   min-height: 340px;
-  background-color: rgb(255, 255, 255, 0.5);
-  // background-color: rgb(238, 218, 130);
+  background-color: var(--cards-color);
   border-radius: 30px;
   padding: 40px;
 
@@ -10,7 +9,7 @@
     display: flex;
     font-family: "Amatic SC";
     font-size: 60px;
-    color: rgb(54, 54, 51);
+    color: var(--cards-text-color);
     margin: 0px -30px;
 
     .first_column {
