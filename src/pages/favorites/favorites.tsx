@@ -6,6 +6,7 @@ import { MeasureButton } from "../../components/measureButton";
 import { favoriteType, LocationType } from "../../types";
 import { FavoriteLocation } from "../../components/favoriteLocation";
 import {
+  ADD_OR_REMOVE_FAVORITES,
   CLEAR_FAVORITES_LIST,
   getFavoriteForecast,
 } from "../../redux/actions/favoritesActions";
@@ -19,12 +20,20 @@ export const Favorites = () => {
   const { favoritesList, favorites } = useSelector(
     (store) => store.FavoritesReducer
   );
+  const favoritesFromStorage = localStorage.getItem("favorites");
 
   console.log("FAVORITES - ", favoritesList);
   useEffect(() => {
     dispatch({
       type: CLEAR_FAVORITES_LIST,
     });
+
+    if (favorites.length === 0 && favoritesFromStorage) {
+      dispatch({
+        type: ADD_OR_REMOVE_FAVORITES,
+        payload: JSON.parse(favoritesFromStorage),
+      });
+    }
 
     favorites.map((location) => {
       dispatch(getFavoriteForecast(location));

@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "../../hooks";
+import {
+  useSelector,
+  useDispatch,
+  useStateWithLocalStorage,
+} from "../../hooks";
 import styles from "./star.module.scss";
 import star from "../../icons/star.svg";
 import { ADD_OR_REMOVE_FAVORITES } from "../../redux/actions/favoritesActions";
@@ -7,6 +11,7 @@ import { ADD_OR_REMOVE_FAVORITES } from "../../redux/actions/favoritesActions";
 export const Star = () => {
   const dispatch = useDispatch();
   const [isActive, setActive] = useState(false);
+  const [value, setValue] = useStateWithLocalStorage("favorites");
 
   const favorites = useSelector((store) => store.FavoritesReducer.favorites);
   const currentLocation = useSelector(
@@ -18,6 +23,15 @@ export const Star = () => {
       return location.key === currentLocation.key;
     })
   );
+
+  useEffect(() => {
+    if (favorites.length === 0 && value) {
+      dispatch({
+        type: ADD_OR_REMOVE_FAVORITES,
+        payload: JSON.parse(value),
+      });
+    }
+  }, []);
 
   useEffect(() => {
     setActive(isFavorites);
@@ -32,6 +46,7 @@ export const Star = () => {
         type: ADD_OR_REMOVE_FAVORITES,
         payload: result,
       });
+      setValue(JSON.stringify(result));
     } else {
       const result = favorites.filter(
         (location) => location.key !== currentLocation.key
@@ -41,6 +56,7 @@ export const Star = () => {
         type: ADD_OR_REMOVE_FAVORITES,
         payload: result,
       });
+      setValue(JSON.stringify(result));
     }
   };
 
