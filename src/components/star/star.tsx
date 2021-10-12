@@ -41,7 +41,7 @@ export const Star = () => {
     setActive((prevState) => !prevState);
     if (!isActive) {
       const result = [...favorites, currentLocation];
-      console.log("IF result ", result);
+
       dispatch({
         type: ADD_OR_REMOVE_FAVORITES,
         payload: result,
@@ -51,7 +51,7 @@ export const Star = () => {
       const result = favorites.filter(
         (location) => location.key !== currentLocation.key
       );
-      console.log("ELSE result ", result);
+
       dispatch({
         type: ADD_OR_REMOVE_FAVORITES,
         payload: result,

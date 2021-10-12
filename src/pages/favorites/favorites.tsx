@@ -22,7 +22,6 @@ export const Favorites = () => {
   );
   const favoritesFromStorage = localStorage.getItem("favorites");
 
-  console.log("FAVORITES - ", favoritesList);
   useEffect(() => {
     dispatch({
       type: CLEAR_FAVORITES_LIST,
