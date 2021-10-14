@@ -15,6 +15,10 @@
   }
 }
 
+.light:hover {
+  background-color: rgb(4, 65, 129);
+}
+
 .dark {
   display: flex;
   justify-content: center;
@@ -28,5 +32,14 @@
 
   img {
     width: 30px;
+  }
+}
+
+.dark:hover {
+  background-color: rgb(240, 160, 41);
+  border: 2px solid rgb(255, 255, 255);
+
+  img {
+    filter: invert(100%);
   }
 }
