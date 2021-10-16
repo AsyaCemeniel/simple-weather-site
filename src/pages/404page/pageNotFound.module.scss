@@ -1,7 +1,7 @@
 .container {
   display: flex;
   height: 90vh;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   .number {
@@ -15,9 +15,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 30px;
 
-    width: 800px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     background-color: var(--back_circle-color);
 
@@ -25,8 +26,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 760px;
-      height: 760px;
+      width: 460px;
+      height: 460px;
       border-radius: 50%;
       background-color: var(--circle-color);
       box-shadow: 0px 0px 20px 20px var(--circle-color);
