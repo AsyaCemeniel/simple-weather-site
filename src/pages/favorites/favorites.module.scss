@@ -7,11 +7,12 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding-top: 15px;
 
     .favorites {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       padding: 100px 130px 30px 130px;
       .favorite {
         margin: 0 10px 20px 10px;

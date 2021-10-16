@@ -25,6 +25,7 @@ code {
   --cards-color: rgb(255, 255, 255, 0.5);
   --cards-text-color: rgb(54, 54, 51);
   --logo-color: rgb(240, 160, 41);
+  --favorites-color: rgb(252, 251, 239);
 }
 
 .theme-dark {
@@ -35,6 +36,7 @@ code {
   --cards-color: rgb(255, 255, 255, 0.3);
   --cards-text-color: rgb(253, 253, 253);
   --logo-color: rgb(160, 220, 255);
+  --favorites-color: rgb(80, 122, 167);
 }
 
 .color {

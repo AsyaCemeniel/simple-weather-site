@@ -1,50 +1,85 @@
-.container {
+.wrapper {
   display: flex;
-  background-color: var(--cards-color);
-  border-radius: 30px;
-  min-width: 240px;
-  padding: 30px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-  .main {
+  .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Amatic SC";
-    font-size: 40px;
-    color: var(--cards-text-color);
+    background-color: var(--favorites-color);
+    border-radius: 30px;
+    min-width: 240px;
+    padding: 30px;
+    justify-content: center;
+    cursor: pointer;
 
-    .today {
+    .main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-family: "Amatic SC";
+      font-size: 40px;
+      color: var(--cards-text-color);
 
-      .city {
-        font-size: 45px;
+      .today {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .city {
+          font-size: 45px;
+          font-weight: 700;
+        }
+
+        .country {
+          font-size: 35px;
+        }
+      }
+
+      .icon {
+        img {
+          width: 200px;
+        }
+      }
+
+      .weather {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+
+      .temperature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-weight: 700;
       }
-
-      .country {
-        font-size: 35px;
-      }
     }
+  }
 
-    .icon {
-      img {
-        width: 200px;
-      }
-    }
+  .delete_btn {
+    display: none;
+  }
+}
 
-    .weather {
-      font-size: 30px;
-      margin-top: 10px;
-    }
+.wrapper:hover {
+  .delete_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--favorites-color);
+    border-radius: 50%;
+    border: none;
+    font-family: "Galdeano";
+    font-size: 25px;
+    color: var(--cards-text-color);
 
-    .temperature {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-weight: 700;
-    }
+    cursor: pointer;
+  }
+
+  .delete_btn:hover {
+    color: rgb(214, 159, 8);
+    border: 2px var(--cards-text-color) solid;
   }
 }
