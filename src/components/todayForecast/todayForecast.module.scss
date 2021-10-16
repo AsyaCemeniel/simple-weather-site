@@ -51,11 +51,18 @@
         .date {
           display: flex;
           justify-content: space-between;
+          align-items: flex-end;
           font-weight: 700;
+          font-size: 65px;
           margin: 0 -7px;
 
           span {
             padding: 0 7px;
+          }
+
+          .day {
+            font-weight: 400;
+            font-size: 50px;
           }
         }
 

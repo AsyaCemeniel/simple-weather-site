@@ -37,7 +37,7 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
           <div className={styles.day_info}>
             <div className={styles.date}>
               <span>{todayForecast?.weekDay} </span>
-              <span> {todayForecast?.date}</span>
+              <span className={styles.day}> {todayForecast?.date}</span>
             </div>
             <span className={styles.weather}>{todayForecast?.weatherText}</span>
           </div>
