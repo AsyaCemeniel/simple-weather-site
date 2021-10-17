@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "../../hooks";
+import { fiveDaysForecast } from "../../utils/data";
 import { TodayForecast } from "../../components/todayForecast";
 import styles from "./mainPage.module.scss";
 import { ForecastType } from "../../types";
@@ -43,12 +44,17 @@ export const MainPage = () => {
             <TodayForecast isMetric={isMetric} />
           </div>
           <div className={styles.week_box}>
-            {weekForecast &&
-              weekForecast.map((weather: ForecastType, index) => (
-                <div key={index} className={styles.weather_block}>
-                  <DailyForecast weather={weather} isMetric={isMetric} />
-                </div>
-              ))}
+            {weekForecast
+              ? weekForecast.map((weather: ForecastType, index) => (
+                  <div key={index} className={styles.weather_block}>
+                    <DailyForecast weather={weather} isMetric={isMetric} />
+                  </div>
+                ))
+              : fiveDaysForecast.map((weather: ForecastType, index) => (
+                  <div key={index} className={styles.weather_block}>
+                    <DailyForecast weather={weather} isMetric={isMetric} />
+                  </div>
+                ))}
           </div>
         </div>
       </div>

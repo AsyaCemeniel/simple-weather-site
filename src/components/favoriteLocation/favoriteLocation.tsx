@@ -5,6 +5,7 @@ import { ADD_OR_REMOVE_FAVORITES } from "../../redux/actions/favoritesActions";
 import { SET_LOCATION } from "../../redux/actions/mainActions";
 import { favoriteType } from "../../types";
 import { icons } from "../../utils/data";
+import { Skeleton } from "../skeleton";
 import styles from "./favoriteLocation.module.scss";
 
 type PropsType = {
@@ -14,7 +15,9 @@ type PropsType = {
 
 export const FavoriteLocation: FC<PropsType> = ({ favorite, isMetric }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector((store) => store.FavoritesReducer.favorites);
+  const { favorites, favoritesListRequest, favoritesListFailure } = useSelector(
+    (store) => store.FavoritesReducer
+  );
 
   const { location, icon, currentTemp, maxTemp, minTemp, weatherText } =
     favorite;
@@ -43,6 +46,57 @@ export const FavoriteLocation: FC<PropsType> = ({ favorite, isMetric }) => {
 
     localStorage.setItem("favorites", JSON.stringify(result));
   };
+
+  if (favoritesListRequest || favoritesListFailure) {
+    console.log("SKELETON!!!");
+    return (
+      <section className={styles.wrapper}>
+        <div className={styles.container}>
+          <div className={styles.main}>
+            <div className={styles.today}>
+              <Skeleton parameters={{ width: "153px", height: "45px" }} />
+              <Skeleton
+                parameters={{
+                  width: "60px",
+                  height: "35px",
+                  marginTop: "10px",
+                }}
+              />
+            </div>
+            <div className={styles.icon}>
+              <Skeleton
+                parameters={{
+                  width: "190px",
+                  height: "190px",
+                  borderRadius: "50%",
+                  marginTop: "10px",
+                }}
+              />
+            </div>
+            <div className={styles.temperature}>
+              <Skeleton
+                parameters={{
+                  width: "36px",
+                  height: "40px",
+                  marginTop: "10px",
+                }}
+              />
+              <Skeleton
+                parameters={{
+                  width: "110px",
+                  height: "40px",
+                  marginTop: "10px",
+                }}
+              />
+            </div>
+            <Skeleton
+              parameters={{ width: "120px", height: "40px", marginTop: "10px" }}
+            />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={styles.wrapper}>

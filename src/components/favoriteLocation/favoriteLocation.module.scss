@@ -9,7 +9,8 @@
     border-radius: 30px;
     min-width: 240px;
     padding: 30px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
 
     .main {
