@@ -1,0 +1,19 @@
+.skeleton {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background: linear-gradient(-90deg, #ececec 0%, #cccccc 50%, #ececec 100%);
+  background-size: 400% 400%;
+  animation: pulse 1.2s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
