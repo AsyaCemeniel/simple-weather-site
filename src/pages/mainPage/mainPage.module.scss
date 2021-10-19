@@ -15,6 +15,7 @@
     height: 1300px;
     background-color: var(--circle-color);
     box-shadow: 0px 0px 20px 20px var(--circle-color);
+    transition: 1s;
   }
 
   .back_circle {
@@ -26,6 +27,7 @@
     width: 1325px;
     height: 1325px;
     background-color: var(--back_circle-color);
+    transition: 1s;
   }
 
   .main {
@@ -49,6 +51,7 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+        transition: 1s;
 
         .search_box {
           display: flex;
@@ -61,6 +64,33 @@
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-around;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    .circle {
+      top: -660px;
+      left: -230px;
+      width: 1100px;
+      height: 1100px;
+    }
+
+    .back_circle {
+      top: -650px;
+      left: -230px;
+      width: 1095px;
+      height: 1095px;
+    }
+
+    .main {
+      .content {
+        .current_box {
+          width: 100%;
+          margin: 20px 0 10px 0;
+        }
       }
     }
   }

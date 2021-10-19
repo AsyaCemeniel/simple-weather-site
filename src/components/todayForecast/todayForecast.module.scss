@@ -4,6 +4,7 @@
   background-color: var(--cards-color);
   border-radius: 30px;
   padding: 40px;
+  transition: 1s;
 
   .main {
     display: flex;
@@ -11,6 +12,7 @@
     font-size: 60px;
     color: var(--cards-text-color);
     margin: 0px -30px;
+    transition: 1s;
 
     .first_column {
       display: flex;
@@ -42,6 +44,7 @@
       align-items: flex-end;
       justify-content: space-between;
       padding: 0px 30px;
+      transition: 1s;
 
       .day_info {
         display: flex;
@@ -55,6 +58,7 @@
           font-weight: 700;
           font-size: 65px;
           margin: 0 -7px;
+          transition: 1s;
 
           span {
             padding: 0 7px;
@@ -63,6 +67,7 @@
           .day {
             font-weight: 400;
             font-size: 50px;
+            transition: 1s;
           }
         }
 
@@ -77,10 +82,41 @@
 
         .wind {
           margin-top: 20px;
+          transition: 1s;
         }
 
         .text {
           font-size: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    padding: 30px;
+    max-height: 340px;
+
+    .main {
+      font-size: 50px;
+
+      .second_column {
+        justify-content: space-around;
+        .day_info {
+          .date {
+            font-size: 55px;
+
+            .day {
+              font-size: 40px;
+            }
+          }
+        }
+
+        .parameters {
+          .wind {
+            margin-top: 10px;
+          }
         }
       }
     }

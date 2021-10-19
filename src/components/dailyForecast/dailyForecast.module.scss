@@ -5,6 +5,7 @@
   min-width: 240px;
   padding: 30px;
   justify-content: center;
+  transition: 1s;
 
   .main {
     display: flex;
@@ -35,5 +36,12 @@
     .temperature {
       font-weight: 700;
     }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    min-width: 220px;
+    padding: 20px;
   }
 }
