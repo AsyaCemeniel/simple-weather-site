@@ -57,7 +57,7 @@ export const FavoriteLocation: FC<PropsType> = ({ favorite, isMetric }) => {
               <img src={currentIcon} alt="weather icon" />
             </div>
             <div className={styles.temperature}>
-              <div>
+              <div className={styles.current}>
                 {isMetric ? currentTemp.c + "°C" : currentTemp.f + "°F"}
               </div>
               <div>{minMaxTemp}</div>

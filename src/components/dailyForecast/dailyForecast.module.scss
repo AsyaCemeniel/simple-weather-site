@@ -43,5 +43,36 @@
   .container {
     min-width: 220px;
     padding: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 200px;
+    padding: 10px;
+
+    .main {
+      font-size: 30px;
+
+      .today {
+        .day {
+          font-size: 35px;
+        }
+
+        .date {
+          font-size: 25px;
+        }
+      }
+      .weather {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .container {
+    padding: 10px 40px 10px 40px;
   }
 }

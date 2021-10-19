@@ -20,8 +20,6 @@ export const FavoriteSkeleton = () => {
           <div className={styles.icon}>
             <Skeleton
               parameters={{
-                width: "190px",
-                height: "190px",
                 borderRadius: "50%",
                 marginTop: "10px",
               }}

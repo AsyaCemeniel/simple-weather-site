@@ -22,6 +22,7 @@
       color: var(--logo-color);
       text-decoration: none;
       cursor: pointer;
+      transition: 1s;
     }
 
     .logo:hover {
@@ -39,6 +40,7 @@
         font-family: "Amatic SC";
         font-size: 36px;
         font-weight: 700;
+        transition: 1s;
 
         a {
           text-decoration: none;
@@ -47,6 +49,26 @@
 
         a:hover {
           color: rgb(214, 159, 8);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    min-height: 8vh;
+    .main {
+      .logo {
+        font-size: 26px;
+      }
+
+      .control {
+        justify-content: flex-end;
+        width: 190px;
+        .favorites {
+          font-size: 26px;
+          margin-right: 20px;
         }
       }
     }

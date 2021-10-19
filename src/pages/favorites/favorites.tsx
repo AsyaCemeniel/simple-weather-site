@@ -44,6 +44,7 @@ export const Favorites = () => {
     <div className={styles.container}>
       <div className={styles.main}>
         <MeasureButton />
+        <div className={styles.title}>- Favorites -</div>
         <div className={styles.favorites}>
           {isLoading
             ? favorites.map((item, index) => (
@@ -51,7 +52,7 @@ export const Favorites = () => {
                   <FavoriteSkeleton />
                 </div>
               ))
-            : favoritesList.map((location: favoriteType, index) => (
+            : favoritesList.map((location, index) => (
                 <div className={styles.favorite} key={index}>
                   <FavoriteLocation favorite={location} isMetric={isMetric} />
                 </div>

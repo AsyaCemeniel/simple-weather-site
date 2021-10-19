@@ -96,7 +96,7 @@
 @media screen and (max-width: 1300px) {
   .container {
     padding: 30px;
-    max-height: 340px;
+    max-width: 517px;
 
     .main {
       font-size: 50px;
@@ -116,6 +116,51 @@
         .parameters {
           .wind {
             margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    padding: 30px 30px 0 30px;
+    .main {
+      flex-direction: column-reverse;
+      font-size: 30px;
+
+      .first_column {
+        flex-direction: row;
+
+        .icon {
+          img {
+            width: 150px;
+          }
+        }
+      }
+
+      .second_column {
+        align-items: center;
+        .day_info {
+          .date {
+            font-size: 40px;
+
+            .day {
+              font-size: 30px;
+            }
+          }
+        }
+        .parameters {
+          align-items: center;
+          margin-top: 20px;
+
+          .wind {
+            margin-top: 5px;
+          }
+
+          .text {
+            font-size: 30px;
           }
         }
       }

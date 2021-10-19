@@ -28,9 +28,9 @@
       }
 
       .icon {
-        img {
-          width: 200px;
-        }
+        width: 190px;
+        height: 190px;
+        margin-bottom: 10px;
       }
 
       .temperature {
@@ -38,6 +38,64 @@
         flex-direction: column;
         align-items: center;
         font-weight: 700;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1075px) {
+  .wrapper {
+    .container {
+      min-width: 160px;
+      padding: 15px;
+
+      .main {
+        font-size: 30px;
+
+        .icon {
+          width: 150px;
+          height: 150px;
+        }
+
+        .weather {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .wrapper {
+    .container {
+      width: 80vw;
+
+      .main {
+        .icon {
+          width: 130px;
+          height: 130px;
+        }
+
+        .weather {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    .container {
+      .main {
+        .icon {
+          width: 100px;
+          height: 100px;
+        }
+        .temperature {
+          .current {
+            display: none;
+          }
+        }
       }
     }
   }
