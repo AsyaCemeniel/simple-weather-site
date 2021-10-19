@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .container {
+    display: flex;
+    background-color: var(--favorites-color);
+    border-radius: 30px;
+    min-width: 240px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Amatic SC";
+      font-size: 40px;
+      color: var(--cards-text-color);
+
+      .today {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .icon {
+        img {
+          width: 200px;
+        }
+      }
+
+      .temperature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 700;
+      }
+    }
+  }
+}
