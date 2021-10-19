@@ -11,14 +11,15 @@ type PropType = {
 };
 
 export const DailyForecast: FC<PropType> = ({ weather, isMetric }) => {
-  const { favoritesList, favorites } = useSelector(
-    (store) => store.FavoritesReducer
+  const dayLoading = useSelector(
+    (store) => store.MainReducer.currentForecastRequest
+  );
+  const weekLoading = useSelector(
+    (store) => store.MainReducer.weekForecastRequest
   );
   const failLoading = useSelector(
     (store) => store.MainReducer.currentForecastFailure
   );
-
-  const isLoading = favorites.length === favoritesList.length;
 
   const { date, weekDay, icon, maxTemp, minTemp, weatherText } = weather;
 
@@ -27,7 +28,7 @@ export const DailyForecast: FC<PropType> = ({ weather, isMetric }) => {
     ? maxTemp.c + "°C / " + minTemp.c + "°C"
     : maxTemp.f + "°F / " + minTemp.f + "°F";
 
-  if (!isLoading || failLoading) {
+  if (dayLoading || weekLoading || failLoading) {
     return (
       <div className={styles.container}>
         <div className={styles.main}>
