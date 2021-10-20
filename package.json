@@ -2,7 +2,7 @@
   "name": "simple-weather-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./simple-weather-site",
+  "homepage": "https://asyacemeniel.github.io/simple-weather-site/",
   "dependencies": {
     "cra-template-typescript": "1.1.2",
     "node-sass": "^6.0.1",
