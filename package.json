@@ -2,6 +2,7 @@
   "name": "simple-weather-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./simple-weather-site",
   "dependencies": {
     "cra-template-typescript": "1.1.2",
     "node-sass": "^6.0.1",
@@ -20,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +47,7 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.0",
+    "gh-pages": "^3.2.3",
     "sass": "^1.39.2"
   }
 }
