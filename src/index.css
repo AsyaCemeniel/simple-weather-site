@@ -43,4 +43,5 @@ code {
   background-color: var(--background-color);
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
