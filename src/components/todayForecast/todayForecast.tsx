@@ -26,7 +26,7 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
     ? todayForecast?.maxTemp.c + "°C / " + todayForecast?.minTemp.c + "°C"
     : todayForecast?.maxTemp.f + "°F / " + todayForecast?.minTemp.f + "°F";
 
-  if (loading || failLoading) {
+  if (loading) {
     return (
       <div className={styles.container}>
         <div className={styles.main}>
@@ -69,6 +69,17 @@ export const TodayForecast: FC<PropType> = ({ isMetric }) => {
               </span>
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (failLoading) {
+    return (
+      <div className={styles.box}>
+        <div className={styles.error}>
+          <div>The allowed number of requests has been exceeded.</div>
+          <div> Try again tomorrow.</div>
         </div>
       </div>
     );

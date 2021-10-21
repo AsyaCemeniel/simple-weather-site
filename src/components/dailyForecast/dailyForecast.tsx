@@ -28,7 +28,7 @@ export const DailyForecast: FC<PropType> = ({ weather, isMetric }) => {
     ? maxTemp.c + "°C / " + minTemp.c + "°C"
     : maxTemp.f + "°F / " + minTemp.f + "°F";
 
-  if (dayLoading || weekLoading || failLoading) {
+  if (dayLoading || weekLoading) {
     return (
       <div className={styles.container}>
         <div className={styles.main}>
@@ -52,6 +52,22 @@ export const DailyForecast: FC<PropType> = ({ weather, isMetric }) => {
           <Skeleton
             parameters={{ width: "90px", height: "30px", marginTop: "10px" }}
           />
+        </div>
+      </div>
+    );
+  }
+
+  if (failLoading) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <div className={styles.today}>
+            <div className={styles.date}>
+              <div>The allowed number of </div>
+              <div>requests has been exceeded.</div>
+              <div> Try again tomorrow.</div>
+            </div>
+          </div>
         </div>
       </div>
     );

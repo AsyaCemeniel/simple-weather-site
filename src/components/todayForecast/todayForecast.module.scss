@@ -1,5 +1,7 @@
 .container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 340px;
   background-color: var(--cards-color);
   border-radius: 30px;
@@ -93,6 +95,29 @@
   }
 }
 
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  background-color: var(--cards-color);
+  border-radius: 30px;
+  padding: 40px;
+  transition: 1s;
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Amatic SC";
+    text-align: center;
+    font-size: 40px;
+    color: var(--cards-text-color);
+    transition: 1s;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .container {
     padding: 30px;
@@ -164,6 +189,13 @@
           }
         }
       }
+    }
+  }
+  .box {
+    padding: 0 30px;
+
+    .error {
+      font-size: 30px;
     }
   }
 }
