@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/simple-weather-site/static/css/main.94975bec.chunk.css",
-    "main.js": "/simple-weather-site/static/js/main.523f2b41.chunk.js",
-    "main.js.map": "/simple-weather-site/static/js/main.523f2b41.chunk.js.map",
+    "main.css": "/simple-weather-site/static/css/main.8e4909f4.chunk.css",
+    "main.js": "/simple-weather-site/static/js/main.0a27eacb.chunk.js",
+    "main.js.map": "/simple-weather-site/static/js/main.0a27eacb.chunk.js.map",
     "runtime-main.js": "/simple-weather-site/static/js/runtime-main.47f97d9c.js",
     "runtime-main.js.map": "/simple-weather-site/static/js/runtime-main.47f97d9c.js.map",
-    "static/js/2.272055bd.chunk.js": "/simple-weather-site/static/js/2.272055bd.chunk.js",
-    "static/js/2.272055bd.chunk.js.map": "/simple-weather-site/static/js/2.272055bd.chunk.js.map",
+    "static/js/2.94cda37d.chunk.js": "/simple-weather-site/static/js/2.94cda37d.chunk.js",
+    "static/js/2.94cda37d.chunk.js.map": "/simple-weather-site/static/js/2.94cda37d.chunk.js.map",
     "static/js/3.0d51c4a9.chunk.js": "/simple-weather-site/static/js/3.0d51c4a9.chunk.js",
     "static/js/3.0d51c4a9.chunk.js.map": "/simple-weather-site/static/js/3.0d51c4a9.chunk.js.map",
     "index.html": "/simple-weather-site/index.html",
-    "static/css/main.94975bec.chunk.css.map": "/simple-weather-site/static/css/main.94975bec.chunk.css.map",
-    "static/js/2.272055bd.chunk.js.LICENSE.txt": "/simple-weather-site/static/js/2.272055bd.chunk.js.LICENSE.txt",
+    "static/css/main.8e4909f4.chunk.css.map": "/simple-weather-site/static/css/main.8e4909f4.chunk.css.map",
+    "static/js/2.94cda37d.chunk.js.LICENSE.txt": "/simple-weather-site/static/js/2.94cda37d.chunk.js.LICENSE.txt",
     "static/media/blue_search.17427486.svg": "/simple-weather-site/static/media/blue_search.17427486.svg",
     "static/media/cloud.3d82b4cb.svg": "/simple-weather-site/static/media/cloud.3d82b4cb.svg",
     "static/media/cloud_foggy.12580af4.svg": "/simple-weather-site/static/media/cloud_foggy.12580af4.svg",
@@ -37,8 +37,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.47f97d9c.js",
-    "static/js/2.272055bd.chunk.js",
-    "static/css/main.94975bec.chunk.css",
-    "static/js/main.523f2b41.chunk.js"
+    "static/js/2.94cda37d.chunk.js",
+    "static/css/main.8e4909f4.chunk.css",
+    "static/js/main.0a27eacb.chunk.js"
   ]
 }
