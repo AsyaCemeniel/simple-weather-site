@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+***-Your Weather-***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The most simple weather application with option to add locations to Favorites, change dark/light moods and unit of measure.
 
-## Available Scripts
+I'm not a designer, but I've done my best for the fully responsive design in this project.
 
-In the project directory, you can run:
+**+ Technology Stack: TypeScript, React(including React Hooks), Redux**
 
-### `yarn start`
+Deployment: https://asyacemeniel.github.io/simple-weather-site/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The main page with search and weather forecast for 5 days
+![2021-10-25_14-54-21](https://user-images.githubusercontent.com/55439753/139829444-53539aea-e215-4bad-9e48-dc7aa937fe57.png)
+***
+Dark mode
+![2021-10-25_14-57-20](https://user-images.githubusercontent.com/55439753/139829450-b7642639-8eba-4b4e-9ee0-6327d616019c.png)
+***
+Responsive desing for smaller screens
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![2021-10-25_14-58-43](https://user-images.githubusercontent.com/55439753/139829454-82c81dbd-1bef-491d-b0e5-223b4526407e.png)
+***
+![2021-10-25_15-03-46](https://user-images.githubusercontent.com/55439753/139829465-ff239470-a474-425e-a65d-ed0b9de58f79.png)
+***
 
-### `yarn test`
+Favorites page
+![2021-10-25_15-00-28](https://user-images.githubusercontent.com/55439753/139829458-5840725b-d1e5-4894-9c67-9a1fc11357fe.png)
+***
+![2021-10-25_15-01-47](https://user-images.githubusercontent.com/55439753/139829462-c57362ae-f7dc-400e-93c0-5353f1a9727a.png)
+***
+![2021-10-25_15-02-23](https://user-images.githubusercontent.com/55439753/139829464-70addbcc-e9be-4987-b2dd-5c493859ec4f.png)
+***
+Note Found page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![2021-11-02_12-20-47](https://user-images.githubusercontent.com/55439753/139829467-76eaeb2b-69f8-4651-991b-ff9c1f8edd94.png)
+***
+![2021-11-02_12-21-16](https://user-images.githubusercontent.com/55439753/139829439-131a487d-1337-4da3-aeeb-51fcedc8f46c.png)
